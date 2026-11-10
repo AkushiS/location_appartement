@@ -1,0 +1,35 @@
+.card {
+  position: relative;
+  height: 340px;
+  width: 340px;
+  border-radius: 10px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  h2 {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+  }
+}
+
+.logements {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px 60px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 50px;
+  background-color: #f6f6f6;
+  border-radius: 25px;
+  box-sizing: border-box;
+}
