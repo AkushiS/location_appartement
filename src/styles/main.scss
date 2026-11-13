@@ -3,6 +3,7 @@
 @use "banner";
 @use "card";
 @use "collapse";
+@use "notfound";
 
 #root {
   min-height: 100vh;
@@ -12,7 +13,7 @@
 
 body {
   margin: 0 auto;
-  font-family: Arial, sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 main {
