@@ -1,6 +1,7 @@
 import { useParams } from "react-router";
 import { useState, useEffect } from "react";
 import NotFound from "./NotFound";
+import Slideshow from "../components/Slideshow";
 
 function Housing() {
   const { id } = useParams();
@@ -31,6 +32,8 @@ function Housing() {
 
   return (
     <main>
+      {logement && <Slideshow pictures={logement.pictures} />}
+
       <h1>{logement ? logement.title : "Chargement..."}</h1>
     </main>
   );
