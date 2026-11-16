@@ -1,7 +1,4 @@
 .collapse {
-  border-radius: 5px;
-  overflow: hidden;
-
   .collapse-header {
     display: flex;
     justify-content: space-between;
@@ -9,6 +6,7 @@
     height: 52px;
     padding: 0 15px;
     background-color: #ff6060;
+    border-radius: 5px;
 
     h2 {
       color: white;
@@ -63,6 +61,7 @@
     .collapse-content-inner {
       min-height: 0;
       overflow: hidden;
+      white-space: pre-line;
     }
   }
 }

@@ -2,6 +2,8 @@ import { useParams } from "react-router";
 import { useState, useEffect } from "react";
 import NotFound from "./NotFound";
 import Slideshow from "../components/Slideshow";
+import star from "../assets/star.png";
+import Collapse from "../components/Collapse";
 
 function Housing() {
   const { id } = useParams();
@@ -34,7 +36,46 @@ function Housing() {
     <main>
       {logement && <Slideshow pictures={logement.pictures} />}
 
-      <h1>{logement ? logement.title : "Chargement..."}</h1>
+      {logement && (
+        <div className="housing-details">
+          <div className="housing-info">
+            <h1>{logement.title}</h1>
+            <p>{logement.location}</p>
+
+            <div className="housing-tags">
+              {logement.tags.map((tag) => (
+                <span key={tag}>{tag}</span>
+              ))}
+            </div>
+          </div>
+
+          <div className="housing-owner">
+            <div className="housing-host">
+              <p>{logement.host.name}</p>
+              <img src={logement.host.picture} alt={`Photo de ${logement.host.name}`} />
+            </div>
+
+            <div className="housing-rating">
+              {Array.from({ length: 5 }, (_, index) => (
+                <img
+                  key={index}
+                  src={star}
+                  alt=""
+                  className={index < Number(logement.rating) ? "star-active" : "star-inactive"}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {logement && (
+        <div className="housing-collapses">
+          <Collapse title="Description" content={logement.description} />
+
+          <Collapse title="Équipements" content={logement.equipments.join("\n")} />
+        </div>
+      )}
     </main>
   );
 }
