@@ -1,6 +1,5 @@
-import { useParams } from "react-router";
+import { useParams, Navigate } from "react-router";
 import { useState, useEffect } from "react";
-import NotFound from "./NotFound";
 import Slideshow from "../components/Slideshow";
 import star from "../assets/star.png";
 import Collapse from "../components/Collapse";
@@ -29,7 +28,7 @@ function Housing() {
   console.log(logement);
 
   if (erreur === "Erreur HTTP : 404") {
-    return <NotFound />;
+    return <Navigate to="/404" replace />;
   }
 
   return (
