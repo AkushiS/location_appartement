@@ -21,6 +21,7 @@
     font-weight: 500;
     text-align: center;
     margin: 0;
+    line-height: 143%;
   }
 
   a {
@@ -28,5 +29,27 @@
     font-size: 18px;
     font-weight: 500;
     text-decoration: underline;
+    line-height: 143%;
+  }
+}
+
+@media (max-width: 767px) {
+  .not-found {
+    gap: 113px;
+    padding-top: 113px;
+    padding-bottom: 113px;
+
+    h1 {
+      font-size: 96px;
+    }
+
+    p {
+      font-size: 18px;
+      max-width: 260px;
+    }
+
+    a {
+      font-size: 14px;
+    }
   }
 }

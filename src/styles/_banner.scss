@@ -22,3 +22,21 @@
     text-align: center;
   }
 }
+
+@media (max-width: 767px) {
+  .banner {
+    height: 111px;
+    border-radius: 10px;
+
+    h1 {
+      left: 16px;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 24px;
+      text-align: left;
+      line-height: 100%;
+      max-width: 225px;
+    }
+  }
+}

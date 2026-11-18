@@ -22,3 +22,24 @@ header {
     }
   }
 }
+
+@media (max-width: 767px) {
+  header {
+    margin-top: 20px;
+    margin-bottom: 27px;
+
+    a img {
+      width: 145px;
+      height: auto;
+    }
+
+    nav {
+      gap: 26px;
+
+      a {
+        font-size: 12px;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
