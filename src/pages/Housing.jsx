@@ -1,8 +1,9 @@
-import { useParams, Navigate } from "react-router";
+import { useParams } from "react-router";
 import { useState, useEffect } from "react";
 import Slideshow from "../components/Slideshow";
 import star from "../assets/star.png";
 import Collapse from "../components/Collapse";
+import NotFound from "./NotFound";
 
 function Housing() {
   const { id } = useParams();
@@ -28,7 +29,7 @@ function Housing() {
   console.log(logement);
 
   if (erreur === "Erreur HTTP : 404") {
-    return <Navigate to="/404" replace />;
+    return <NotFound />;
   }
 
   return (
@@ -51,7 +52,10 @@ function Housing() {
           <div className="housing-owner">
             <div className="housing-host">
               <p>{logement.host.name}</p>
-              <img src={logement.host.picture} alt={`Photo de ${logement.host.name}`} />
+              <img
+                src={logement.host.picture}
+                alt={`Photo de ${logement.host.name}`}
+              />
             </div>
 
             <div className="housing-rating">
@@ -60,7 +64,11 @@ function Housing() {
                   key={index}
                   src={star}
                   alt=""
-                  className={index < Number(logement.rating) ? "star-active" : "star-inactive"}
+                  className={
+                    index < Number(logement.rating)
+                      ? "star-active"
+                      : "star-inactive"
+                  }
                 />
               ))}
             </div>
@@ -72,7 +80,10 @@ function Housing() {
         <div className="housing-collapses">
           <Collapse title="Description" content={logement.description} />
 
-          <Collapse title="Équipements" content={logement.equipments.join("\n")} />
+          <Collapse
+            title="Équipements"
+            content={logement.equipments.join("\n")}
+          />
         </div>
       )}
     </main>
